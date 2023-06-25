@@ -427,7 +427,6 @@ class Chrome(selenium.webdriver.chrome.webdriver.WebDriver):
             logger.debug("did not find a bad exit_type flag ")
 
         self.options = options
-
         if not desired_capabilities:
             desired_capabilities = options.to_capabilities()
 
@@ -453,6 +452,7 @@ class Chrome(selenium.webdriver.chrome.webdriver.WebDriver):
         super(Chrome, self).__init__(
             service=service,
             options=options,
+            desired_capabilities=desired_capabilities,
             keep_alive=keep_alive,
         )
 
